@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="博客，理科生，Python"><!--用于告诉搜索引擎，你网页的关键字-->
+    <meta name="description" content="理科生，热爱前端与编程。目前工作，这是我的第一份博客"><!--用于告诉搜索引擎，你网站的主要内容-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--这个概念较为复杂，具体的会在下篇博文中讲述。这个属性常用于设计移动端网页-->
+    <meta name="robots" content="none"><!--robots用来告诉爬虫哪些页面需要索引，哪些页面不需要索引-->
+    <meta name="author" content="张洛,17630583910@163.com"><!--用于标注网页作者-->
+    <meta name="generator" content="Pycharm"><!--网站所使用的软件-->
+    <meta name="copyright" content="张洛"> <!--代表该网站为张洛个人版权所有-->
+    <meta name="revisit-after" content="1 month"> <!--规定爬虫访问时间，当然也可以不按照规定进行-->
+    <meta name="renderer" content="webkit"> <!--默认webkit内核-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> <!--指定IE和Chrome使用最新版本渲染当前页面-->
+    <title>
+        {% block title %}基础模板{% endblock %}
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="{% static "other_sources/bootstrap-3.4.1/css/bootstrap.css" %}">
+    <script type="text/javascript" src="{% static "js/jquery-3.6.0.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "assets/waifu.css" %}">
+    <script type="text/javascript" src="{% static "js/vue.js" %}"></script>
+    <script>Vue.config.productionTip = false</script>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "ico/blog.ico" %}"/>
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+{% block content %}
+{% endblock %}
+<!--看板娘代码-->
+<div class="waifu" id="waifu">
+    <div class="waifu-tips" style="opacity: 1;"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
+    </div>
+</div>
+<script type="text/javascript" src="{% static "assets/live2d.min.js" %}"></script>
+<script type="text/javascript" src="{% static "assets/waifu-tips.js" %}"></script>
+<script type="text/javascript">initModel()</script>
+<link rel="stylesheet" type="text/css" href="{% static "assets/flat-ui.min.css" %}">
+<!--看板娘代码-->
+</body>
+{% block foot %}
+{% endblock %}
+</html>
