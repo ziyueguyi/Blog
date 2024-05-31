@@ -6,6 +6,8 @@
 # @日期时间 :2024/4/30 13:08
 # @文件介绍 :
 """
+from urllib.parse import urlparse
+
 from django.core.paginator import Paginator
 from django.db.models import Model
 from django.shortcuts import render
@@ -29,7 +31,9 @@ class UserAPIView(APIView):
         :param request:
         :return:
         """
-        return render(request, "login.html")
+        url_path = urlparse(request.build_absolute_uri()).path.replace("/", "")
+        url_path = url_path if url_path else "main"
+        return render(request, "{0}.html".format(url_path))
 
     def post(self, request):
         """

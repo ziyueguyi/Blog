@@ -12,6 +12,6 @@ class LoginView(UserAPIView):
         self.db_table = User
         self.serializer = UserSerializer
 
-    def get(self, request, *args, **kwargs):
-        print(request.query_params)
-        return render(request, "login.html")
+    # def get(self, request, *args, **kwargs):
+    #     print(request.build_absolute_uri())
+    #     return render(request, "login.html")
