@@ -1,0 +1,95 @@
+.text {
+    width: 100%;
+    height: 100%;
+    transition: all 1s ease-in-out;
+}
+
+.active .text:first-child {
+    margin-top: -100%;
+}
+
+body {
+    background-color: #ededed;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    position: relative;
+    width: 900px;
+    height: 550px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.switchWrapper {
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    overflow: hidden;
+    width: 32%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: transform 1s ease-in-out;
+}
+
+.btn {
+    position: absolute;
+    width: 90px;
+    height: 36px;
+    color: #fffffe;
+    background-color: #ff8906;
+    font-size: 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.active .switchWrapper {
+    transform: translateX(calc(900px - 100%));
+}
+
+.switchWrapper::after {
+    content: '';
+    display: block;
+    /*background-image: url('../../images/upload/pic_1.jpg');*/
+    background-size: 900px 550px;
+    background-position: top left;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+}
+
+.active .switchWrapper::after {
+    background-position: top right;
+}
+
+.outerBox {
+    position: absolute;
+    z-index: 9;
+    left: 32%;
+    overflow: hidden;
+    width: 68%;
+    height: 100%;
+    transition: all 1s ease-in-out;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: #fffffe;
+}
+
+.active .outerBox {
+    transform: translateX(calc(-900px + 100%));
+}

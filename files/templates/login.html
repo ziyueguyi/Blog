@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    登录界面
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="main">
+        <!-- 切换功能区 -->
+        <div class="switchWrapper flexCenter">
+            <div class="btn flexCenter">
+                <div class="text flexCenter">去登录</div>
+                <div class="text flexCenter">去注册</div>
+            </div>
+        </div>
+
+        <!-- 表单区域 -->
+        <div class="outerBox">
+            <div class="container flexCenter">
+                <div class="signInBox">注册内容区</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block foot %}
+    <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+{% endblock %}

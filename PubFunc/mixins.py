@@ -29,7 +29,7 @@ class UserAPIView(APIView):
         :param request:
         :return:
         """
-        ...
+        return render(request, "login.html")
 
     def post(self, request):
         """
@@ -96,6 +96,6 @@ class UserAPIView(APIView):
         data = data.all()
         data = Paginator(data, page_size, allow_empty_first_page=False)
         num_page = data.num_pages
-        ser_data = self.serializer(instance=data.page(page), many=True).data if num_page > 0 else []
-        return Response({"page_total": data.num_pages, "page_size": len(ser_data), "data": ser_data},
+        ser_data = self.serializer(instance=data.page(page).object_list, many=True).data if num_page > 0 else []
+        return Response({"page_total": num_page, "page_size": len(ser_data), "data": ser_data},
                         status=status.HTTP_200_OK)

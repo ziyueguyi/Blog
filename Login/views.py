@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from .serializers import UserSerializer
+from .models import User
 from PubFunc.mixins import UserAPIView
 
 
@@ -7,3 +9,5 @@ from PubFunc.mixins import UserAPIView
 class LoginView(UserAPIView):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.db_table = User
+        self.serializer = UserSerializer
