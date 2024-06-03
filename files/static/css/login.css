@@ -62,7 +62,7 @@ body {
 .switchWrapper::after {
     content: '';
     display: block;
-    background-image: url('../images/upload/pic_1.jpg');
+    background-image: url('../images/upload/main/pic_1.jpg');
     background-size: 900px 550px;
     background-position: top left;
     width: 100%;

@@ -16,10 +16,10 @@
         {% block title %}基础模板{% endblock %}
     </title>
 
-    <link rel="stylesheet" type="text/css" href="{% static "other_sources/bootstrap-3.4.1/css/bootstrap.css" %}">
-    <script type="text/javascript" src="{% static "js/jquery-3.6.0.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "other_sources/bootstrap-5.3.0/css/bootstrap.css" %}">
+    <script type="text/javascript" src="{% static "other_sources/jquery-3.6.0/jquery-3.6.0.js" %}"></script>
+    <script type="text/javascript" src="{% static "other_sources/vue.js" %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static "assets/waifu_l.css" %}">
-    <script type="text/javascript" src="{% static "js/vue.js" %}"></script>
     <script>Vue.config.productionTip = false</script>
     <link rel="shortcut icon" type="image/x-icon" href="{% static "ico/blog.ico" %}"/>
     {% block head %}
@@ -50,4 +50,5 @@
 </body>
 {% block foot %}
 {% endblock %}
+<script type="text/javascript" src="{% static 'js/base.js' %}"></script>
 </html>
