@@ -83,7 +83,7 @@ class UserAPIView(APIView):
         :return:
         """
         data = self.db_table.objects
-        params = dict(request.query_params)
+        params = dict(request.data)
         page = int(params.pop('page', [self.page])[0])
         page_size = int(params.pop('page_size', [self.page_size])[0])
         for k, v in request.query_params.items():

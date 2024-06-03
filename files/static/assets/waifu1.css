@@ -42,7 +42,7 @@
     animation-iteration-count:infinite;
     animation-name:shake;
     animation-timing-function:ease-in-out;
-    color:#FF66CC;
+    color:black;
 }
 .waifu-tool {
     display:none;
@@ -269,7 +269,7 @@ set 限制解除 #rwl-iqxin {
     height:25px;
     font-size:12px;
     font-weight: 500;
-    font-family:Verdana, Arial, '宋体';
+    font-family: Verdana, Arial, '宋体', serif;
     color:#fff;
     background:#333;
     z-index:2147483647;

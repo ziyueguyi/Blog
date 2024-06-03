@@ -21,7 +21,8 @@
 	.waifu {
 	display:none
 }
-}.waifu-tips {
+}
+.waifu-tips {
 	opacity:0;
 	width:250px;
 	min-height:50px;
@@ -40,7 +41,7 @@
 	animation-iteration-count:infinite;
 	animation-name:shake;
 	animation-timing-function:ease-in-out;
-	color:#FF66CC;
+	color:black;
 }
 .waifu-tool {
 	display:none;
@@ -66,12 +67,12 @@
 .waifu #live2d {
 	position:relative
 }
-.waifu #live2d:hover {
-	cursor:-webkit-grab
-}
-.waifu #live2d:active {
-	cursor:-webkit-grabbing
-}
+/*.waifu #live2d:hover {*/
+/*	cursor:-webkit-grab*/
+/*}*/
+/*.waifu #live2d:active {*/
+/*	cursor:-webkit-grabbing*/
+/*}*/
 @keyframes shake {
 	2% {
 	transform:translate(.5px,-1.5px) rotate(-.5deg)
@@ -223,13 +224,14 @@
 0%,100% {
 	transform:translate(0,0) rotate(0)
 }
-}@font-face {
-	font-family:Flat-UI-Icons;
-	src:url(flat-ui-icons-regular.eot);
-	src:url(flat-ui-icons-regular.eot?#iefix) format('embedded-opentype'),url(flat-ui-icons-regular.woff) format('woff'),url(flat-ui-icons-regular.ttf) format('truetype'),url(flat-ui-icons-regular.svg#flat-ui-icons-regular) format('svg')
 }
+/*@font-face {*/
+/*	font-family:Flat-UI-Icons;*/
+/*	src:url(flat-ui-icons-regular.eot);*/
+/*	src:url(flat-ui-icons-regular.eot?#iefix) format('embedded-opentype'),url(flat-ui-icons-regular.woff) format('woff'),url(flat-ui-icons-regular.ttf) format('truetype'),url(flat-ui-icons-regular.svg#flat-ui-icons-regular) format('svg')*/
+/*}*/
 [class*=fui-],[class^=fui-] {
-	font-family:Flat-UI-Icons;
+	font-family: Flat-UI-Icons, serif;
 	speak:none;
 	font-style:normal;
 	font-weight:400;
