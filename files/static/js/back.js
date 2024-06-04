@@ -4,9 +4,9 @@ for (let i = 0; i < del.length; i++) {
         del[i].parentNode.parentNode.parentNode.remove()
     }
 }
-document.querySelector('.h_icon2').onclick = () => {
-    Alert("11111111111111111")
-    let url = "back"
+// document.querySelector('.h_icon2').onclick = get_head_dir
+function get_head_dir() {
+    let url = ""
     $.ajax({
         url: url, //要请求的后端地址
         type: "OPTIONS", //数据发送的方式(POST或者GET)
@@ -19,7 +19,7 @@ document.querySelector('.h_icon2').onclick = () => {
             }
         },
         error: function () {//ajax请求失败后触发的方法
-            console.log('Send Request Fail..');
+            Alert("msg"); //result为响应内容
         }
     });
 }

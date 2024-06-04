@@ -16,3 +16,17 @@ class BackPageUrl(BaseDB):
         verbose_name = "后台管理页面路由"
         verbose_name_plural = verbose_name
         ordering = ["ID"]
+
+
+class Status(BaseDB):
+    statu_code = models.BigIntegerField(unique=True, null=False, verbose_name="状态码")
+    inter_en = models.CharField(max_length=255, verbose_name="英文信息")
+    inter_ch = models.CharField(max_length=255, verbose_name="中文信息")
+    explain = models.CharField(max_length=255, verbose_name="解释信息")
+    inter_solu = models.CharField(max_length=255, verbose_name="搞怪信息")
+
+    class Meta:
+        db_table = "status"
+        verbose_name = "状态码信息"
+        verbose_name_plural = verbose_name
+        ordering = ["ID"]

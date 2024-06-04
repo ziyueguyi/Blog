@@ -16,6 +16,9 @@ from rest_framework.response import Response
 from rest_framework.serializers import Serializer
 from rest_framework.views import APIView
 
+from Back.models import Status
+from Back.serializers import StatusSerializer
+
 
 class UserAPIView(APIView):
     def __init__(self, **kwargs):
@@ -25,7 +28,8 @@ class UserAPIView(APIView):
         self.page = 1
         self.page_size = 10
 
-    def get(self, request):
+    @staticmethod
+    def get(request):
         """
         获取页面
         :param request:
@@ -62,7 +66,7 @@ class UserAPIView(APIView):
         serializer = self.serializer(instance=data, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response({"data": serializer.data, **StatusView.get(200)}, status=status.HTTP_200_OK)
 
     def delete(self, request, pk: list):
         """
@@ -98,8 +102,24 @@ class UserAPIView(APIView):
             else:
                 pass
         data = data.all()
+        print(data)
         data = Paginator(data, page_size, allow_empty_first_page=False)
         num_page = data.num_pages
         ser_data = self.serializer(instance=data.page(page).object_list, many=True).data if num_page > 0 else []
-        return Response({"page_total": num_page, "page_size": len(ser_data), "data": ser_data},
+        return Response({"page_total": num_page, "page_size": len(ser_data), "data": ser_data, **StatusView.get(200)},
                         status=status.HTTP_200_OK)
+
+
+class StatusView:
+    @classmethod
+    def get(cls, statu):
+        """
+        获取数据列表
+        :param statu:
+        :return:
+        """
+        data = Status.objects.filter(statu_code=statu)
+        if data.count() != 1:
+            data = Status.objects.filter(statu_code=509)
+        ser_data = StatusSerializer(instance=data.first()).data
+        return ser_data
