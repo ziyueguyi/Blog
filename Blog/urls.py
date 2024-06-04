@@ -24,4 +24,4 @@ urlpatterns = [
     path('back/', BackView.as_view()),
     path('login/', LoginView.as_view()),
 ]
-handler404 = "Main.views.page_not_found"
+handler404 = "PubFunc.mixins.page_not_found"

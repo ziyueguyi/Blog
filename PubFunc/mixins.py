@@ -123,3 +123,7 @@ class StatusView:
             data = Status.objects.filter(statu_code=509)
         ser_data = StatusSerializer(instance=data.first()).data
         return ser_data
+
+
+def page_not_found(request, exception=None):
+    return render(request, 'main.html', status=404)

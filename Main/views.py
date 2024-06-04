@@ -9,5 +9,4 @@ class MainView(UserAPIView):
         super().__init__(**kwargs)
 
 
-def page_not_found(request, exception=None):
-    return render(request, 'main.html', status=404)
+
