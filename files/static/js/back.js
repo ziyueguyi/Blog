@@ -13,13 +13,13 @@ function get_head_dir() {
         dataType: "json", //后端返回的数据格式
         success: function (result) {//ajax请求成功后触发的方法
             if (result["code"] === 200) {
-                Alert(result["msg"] + "cg")
+                Alert(result["msg"] + "3")
             } else {
-                Alert(result["msg"]); //result为响应内容
+                Alert(result["msg"]+"2"); //result为响应内容
             }
         },
         error: function () {//ajax请求失败后触发的方法
-            Alert("msg"); //result为响应内容
+            Alert("msg","1"); //result为响应内容
         }
     });
 }

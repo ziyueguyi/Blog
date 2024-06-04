@@ -12,10 +12,10 @@ from .models import BackPageUrl, Status
 
 
 class BackPageUrlSerializer(serializers.Serializer):
-    ID = serializers.IntegerField(read_only=True)
-    crt_time = serializers.DateTimeField(read_only=True)
-    upd_time = serializers.DateTimeField(read_only=True)
-    is_del = serializers.BooleanField(default=True, read_only=True)
+    # ID = serializers.IntegerField(read_only=True)
+    # crt_time = serializers.DateTimeField(read_only=True)
+    # upd_time = serializers.DateTimeField(read_only=True)
+    # is_del = serializers.BooleanField(default=True, read_only=True)
 
     page_name = serializers.CharField(max_length=10, label="页面名称")
     page_url = serializers.CharField(max_length=255, label="页面链接")
