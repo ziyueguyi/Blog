@@ -23,7 +23,5 @@ class BackView(UserAPIView):
         :param kwargs:
         :return:
         """
-        data = self.db_table.objects.all()
-        ser_data = self.serializer(instance=data, many=True).data
+        ser_data = self.serializer(instance=self.db_table.objects.all(), many=True).data
         return Response({"data": ser_data, **StatusView.get(200)}, status=status.HTTP_200_OK)
-

@@ -76,7 +76,7 @@ class UserAPIView(APIView):
         :return:
         """
         self.db_table.objects.get(pk=pk).delete()
-        return Response(status=status.HTTP_200_OK)
+        return Response(data=StatusView.get(200), status=status.HTTP_200_OK)
 
     def options(self, request, *args, **kwargs):
         """
@@ -102,7 +102,6 @@ class UserAPIView(APIView):
             else:
                 pass
         data = data.all()
-        print(data)
         data = Paginator(data, page_size, allow_empty_first_page=False)
         num_page = data.num_pages
         ser_data = self.serializer(instance=data.page(page).object_list, many=True).data if num_page > 0 else []
