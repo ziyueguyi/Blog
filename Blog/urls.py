@@ -16,12 +16,14 @@ Including another URLconf
 """
 from django.urls import path
 
-from Back.views import BackView
+from Back.views import BackView, Back1View
 from Login.views import LoginView
 from Main.views import MainView
+
 urlpatterns = [
     path('', MainView.as_view()),
     path('back/', BackView.as_view()),
+    path('back1/', Back1View.as_view()),
     path('login/', LoginView.as_view()),
 ]
 handler404 = "PubFunc.mixins.page_not_found"

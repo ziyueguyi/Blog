@@ -20,6 +20,7 @@
     <script type="text/javascript" src="{% static "other_sources/jquery-3.6.0/jquery-3.6.0.js" %}"></script>
     <script type="text/javascript" src="{% static "other_sources/vue.js" %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static "assets/waifu_l.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}">
     <script>Vue.config.productionTip = false</script>
     <link rel="shortcut icon" type="image/x-icon" href="{% static "ico/blog.ico" %}"/>
     {% block head %}
@@ -42,13 +43,15 @@
         <span class="fui-cross"></span>
     </div>
 </div>
+<!--看板娘代码-->
+</body>
+{% block foot %}
+{% endblock %}
+<!--看板娘代码-->
 <script type="text/javascript" src="{% static "assets/live2d.min.js" %}"></script>
 <script type="text/javascript" src="{% static "assets/waifu-tips.js" %}"></script>
 <script type="text/javascript">initModel()</script>
 <link rel="stylesheet" type="text/css" href="{% static "assets/flat-ui.min.css" %}">
 <!--看板娘代码-->
-</body>
-{% block foot %}
-{% endblock %}
 <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
 </html>

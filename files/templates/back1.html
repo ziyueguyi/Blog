@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/back1.css' %}">
+{% endblock %}
+{% block content %}
+    <!--头部-->
+    <div id="l_d">
+        <!--图标栏-->
+        <div id="l_h_d">
+            <ul id="lh_du">
+                <li id="lh_du_l"></li>
+            </ul>
+        </div>
+        <!--菜单栏-->
+        <div id="l_c_d">
+            <ul id="lc_du">
+{#                <li id="lc_du_l"><span>正则</span></li>#}
+            </ul>
+        </div>
+        <!--登录信息-->
+        <div id="l_f_d">
+            <p id="lf_dp">
+                <span id="lf_dp_ls">当前用户：</span>
+                <span id="lf_dp_rs">会做饭的菜鸡</span>
+                <input id="lf_dp_i" type="button" value="登录">
+            </p>
+        </div>
+    </div>
+    <!--内容栏-->
+    <div id="r_d">
+        <!--右侧菜单栏-->
+        <div id="rh_ld">
+            <ul id="rh_ld_u">
+{#                <li id="rh_ld_ul"><span>真我</span></li>#}
+            </ul>
+        </div>
+        <div id="rh_rd">
+            <!--横幅栏-->
+            <div id="r_b_d">
+                <span id="rb_dls">首页</span>
+                <span id="rb_dcs">></span>
+                <span id="rb_drs">首页</span>
+            </div>
+            <!--内容栏-->
+            <div id="r_c_d"></div>
+        </div>
+    </div>
+{% endblock %}
+{% block foot %}
+    <script type="text/javascript" src="{% static 'js/back1.js' %}"></script>
+{% endblock %}
