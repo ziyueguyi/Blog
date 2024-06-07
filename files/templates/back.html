@@ -1,232 +1,55 @@
 {% extends 'base.html' %}
-
-{% block title %}
-    登录界面
-{% endblock %}
 {% block head %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/back.css' %}">
 {% endblock %}
 {% block content %}
-    <div class="tz_content">
-        <!--t_left start-->
-        <div class="t_left">
-            <div class="l_logo"></div>
-            <div class="l_nav">
-                <ul>
-                    <li class="active">
-                        <a href="">
-                            <i class="icon_1"></i>
-                            <span>首页</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="icon_1"></i>
-                            <span>学生列表</span>
-                        </a>
-                    </li>
+    <!--头部-->
+    <div id="l_d">
+        <!--图标栏-->
+        <div id="l_h_d">
+            <ul id="lh_du">
+                <li id="lh_du_l"></li>
+            </ul>
+        </div>
+        <!--菜单栏-->
+        <div id="l_c_d">
+            <ul id="lc_du">
+                {#                <li class="lc_du_l"><span>正则</span></li>#}
+            </ul>
+        </div>
+        <!--登录信息-->
+        <div id="l_f_d">
+            <p id="lf_dp">
+                <span id="lf_dp_ls">当前用户：</span>
+                <span id="lf_dp_rs">会做饭的菜鸡</span>
+                <input id="lf_dp_i" type="button" value="登录">
+            </p>
+        </div>
+    </div>
+    <!--内容栏-->
+    <div id="r_d">
+        <!--右侧菜单栏-->
+        <div id="rh_ld">
+            <ul id="rh_ld_u">
+                {#                <li id="rh_ld_ul"><span>真我</span></li>#}
+            </ul>
+        </div>
+        <div id="rh_rd">
+            <!--横幅栏-->
+            <div id="r_b_d">
+                <span id="rb_dls">首页</span>
+                <span id="rb_dcs">></span>
+                <span id="rb_drs">首页</span>
+            </div>
+            <!--内容栏-->
+            <div id="r_c_d">
+                <iframe id="rc_di">
 
-                    <li>
-                        <a href="#">
-                            <i class="icon_2"></i>
-                            <span>教师列表</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="icon_3"></i>
-                            <span>专业课列表</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="icon_4"></i>
-                            <span>年级管理</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="icon_5"></i>
-                            <span>班级管理</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="icon_6"></i>
-                            <span>作业管理</span>
-                        </a>
-                    </li>
-                </ul>
+                </iframe>
             </div>
         </div>
-        <!--t_left end-->
-
-        <!--t_header start-->
-        <div class="t_header">
-            <!--h_nav start-->
-            <div class="h_nav">
-                <ul>
-                    <li>
-                        <a href="#" class="h_sel">
-                            <i class="h_icon1"></i>
-                            <span>首页</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" onclick="get_head_dir()">
-                            <i class="h_icon2"></i>
-                            <span>界面管理</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="h_icon3"></i>
-                            <span>栏目管理</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="h_icon4"></i>
-                            <span>内容管理</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="h_icon5"></i>
-                            <span>用户管理</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="h_icon6"></i>
-                            <span>论坛中心</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="h_icon7"></i>
-                            <span>应用中心</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="h_icon8"></i>
-                            <span>工具</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!--end h_nav-->
-
-            <!--h_info start-->
-            <div class="h_info">
-                <div class="h_user">当前用户：Arry , 身份：系统管理员</div>
-                <div class="h_out">
-                    <a href="#">
-                        <span>退出</span>
-                        <i></i>
-                    </a>
-                </div>
-            </div>
-            <!--end h_info-->
-
-        </div>
-        <!--end t_header-->
-
-
-        <!--t_right start-->
-        <div class="t_right">
-
-            <!--r_location start-->
-            <div class="r_location">
-                <i></i>
-                <p>您当前所在位置：首页 > 后台中心</p>
-            </div>
-            <!--end r_location-->
-
-            <!--r_message start-->
-            <div class="r_message">
-                <div class="m_list m_1">
-                    <div class="m_pic"></div>
-                    <div class="m_desc">
-                        <span>2450</span>
-                        <p>所有用户数</p>
-                    </div>
-                </div>
-                <div class="m_list m_2">
-                    <div class="m_pic"></div>
-                    <div class="m_desc">
-                        <span>2450</span>
-                        <p>所有用户数</p>
-                    </div>
-                </div>
-                <div class="m_list m_3">
-                    <div class="m_pic"></div>
-                    <div class="m_desc">
-                        <span>2450</span>
-                        <p>所有用户数</p>
-                    </div>
-                </div>
-                <div class="m_list m_4">
-                    <div class="m_pic"></div>
-                    <div class="m_desc">
-                        <span>2450</span>
-                        <p>所有用户数</p>
-                    </div>
-                </div>
-                <div class="m_list m_5">
-                    <div class="m_pic"></div>
-                    <div class="m_desc">
-                        <span>2450</span>
-                        <p>所有用户数</p>
-                    </div>
-                </div>
-                <div class="m_list m_6">
-                    <div class="m_pic"></div>
-                    <div class="m_desc">
-                        <span>2450</span>
-                        <p>所有用户数</p>
-                    </div>
-                </div>
-                <div class="m_list m_7">
-                    <div class="m_pic"></div>
-                    <div class="m_desc">
-                        <span>2450</span>
-                        <p>所有用户数</p>
-                    </div>
-                </div>
-                <div class="m_list m_8">
-                    <div class="m_pic"></div>
-                    <div class="m_desc">
-                        <span>2450</span>
-                        <p>所有用户数</p>
-                    </div>
-                </div>
-                <div class="m_list m_9">
-                    <div class="m_pic"></div>
-                    <div class="m_desc">
-                        <span>2450</span>
-                        <p>所有用户数</p>
-                    </div>
-                </div>
-                <div class="m_list m_10">
-                    <div class="m_pic"></div>
-                    <div class="m_desc">
-                        <span>2450</span>
-                        <p>所有用户数</p>
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <!--end r_message-->
-
-        </div>
-        <!--end t_right-->
-
     </div>
 {% endblock %}
 {% block foot %}
     <script type="text/javascript" src="{% static 'js/back.js' %}"></script>
 {% endblock %}
-

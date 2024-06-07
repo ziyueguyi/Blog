@@ -1,25 +1,23 @@
-var del = document.getElementsByClassName('a_del')
-for (let i = 0; i < del.length; i++) {
-    del[i].onclick = function () {
-        del[i].parentNode.parentNode.parentNode.remove()
-    }
-}
-// document.querySelector('.h_icon2').onclick = get_head_dir
-function get_head_dir() {
+// 页面加载时自动加载菜单
+window.onload = function () {
     let url = ""
+    let method = "OPTIONS"
     $.ajax({
         url: url, //要请求的后端地址
-        type: "OPTIONS", //数据发送的方式(POST或者GET)
+        type: method, //数据发送的方式(POST或者GET)
+        // data: user_info, //需要传递的参数
         dataType: "json", //后端返回的数据格式
         success: function (result) {//ajax请求成功后触发的方法
-            if (result["code"] === 200) {
-                Alert(result["msg"] + "3")
-            } else {
-                Alert(result["msg"]+"2"); //result为响应内容
-            }
+            result["data"].forEach(function (tr) {
+                if (tr["page_level"] === 0) {
+                    const new_span = $('<span>').text(tr["page_name"]);
+                    const new_li = $('<li class="lc_du_l">').append(new_span);
+                    $("#lc_du").append(new_li);
+                }
+            })
         },
         error: function () {//ajax请求失败后触发的方法
-            Alert("msg","1"); //result为响应内容
+            console.log('Send Request Fail..');
         }
     });
-}
+};
