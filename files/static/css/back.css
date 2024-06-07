@@ -159,6 +159,7 @@ li {
             /*内容栏*/
             width: 100%;
             height: calc(100% - 30px);
+            background-color: #a99f9f;
         }
     }
 }
