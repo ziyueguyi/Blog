@@ -14,7 +14,9 @@ window.onload = function () {
             lc_du.empty()
             menu_list.forEach(function (tr) {
                 if (tr["page_level"] === 0) {
-                    const new_span = $('<span>').text(tr["page_name"]).attr("s_id", tr["ID"]);
+                    const new_span = $('<span>').text(tr["page_name"]).attr("s_id", tr["ID"]).css({
+                        "cursor": "default",
+                        });
                     const new_li = $('<li class="lc_du_l" >').append(new_span);
                     lc_du.append(new_li);
                 }
@@ -40,6 +42,7 @@ function show_menu() {
                 "display": "block",
                 "width": "100%",
                 "height": "100%",
+                "cursor": "default",
             }).click(function () {
                 window.open(["iframe?s_id", tr["ID"]].join("="), "rc_di");
             });

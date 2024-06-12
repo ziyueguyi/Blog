@@ -1,10 +1,9 @@
-from django.core.paginator import Paginator
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.response import Response
 
-from Back.models import BackPageUrl, Status
-from Back.serializers import BackPageUrlSerializer, StatusSerializer
+from Back.models import BackPageUrl
+from Back.serializers import BackPageUrlSerializer
 from PubFunc.mixins import UserAPIView, StatusView
 
 
@@ -36,4 +35,14 @@ class DealIframeView(UserAPIView):
     def get(self, request, *args, **kwargs):
         params = request.GET.get('s_id', 10)
         ser_data = self.serializer(instance=self.db_table.objects.filter(ID=params).first()).data
-        return render(request, "back/{0}.html".format(ser_data.get("page_url", "home_page")))
+        page = ser_data.get("page_url", "home_page")
+        page = page if page else "home_page"
+        return render(request, "back/{0}.html".format(page))
+
+    def post(self, request, *args, **kwargs): ...
+
+    def put(self, request, *args, **kwargs): ...
+
+    def delete(self, request, *args, **kwargs): ...
+
+    def options(self, request, *args, **kwargs): ...
