@@ -1,7 +1,7 @@
 const main = document.querySelector('.main');
 const btn = document.querySelector('.btn');
 const reg = document.querySelector('.signInBox').querySelectorAll(".reg");
-const but_or_reg = document.querySelector('.but_or_reg');
+const but_or_reg = document.querySelector('#but_or_reg');
 // 登录和注册切换功能
 btn.onclick = () => {
     if (main.className.indexOf('active') !== -1) {

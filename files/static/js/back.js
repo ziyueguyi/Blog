@@ -36,11 +36,18 @@ function show_menu() {
     $("#rb_dls").text($(this).text())
     menu_list.forEach(function (tr) {
         if (s_id === String(tr["parent_id"]) && tr["page_level"] === 1) {
-            const new_span = $('<span>').text(tr["page_name"]).attr("s_id", tr["ID"]);
+            const new_span = $('<span>').text(tr["page_name"]).css({
+                "display": "block",
+                "width": "100%",
+                "height": "100%",
+            }).click(function () {
+                window.open(["iframe?s_id", tr["ID"]].join("="), "rc_di");
+            });
             const new_li = $('<li class="rh_ld_ul" >').append(new_span);
             ld_u.append(new_li);
         }
     });
+
     ld_u.on("click", "li", show_page)
     let li_first = ld_u.find("li").first()
     if (li_first.text() !== '') {

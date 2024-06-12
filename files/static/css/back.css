@@ -6,6 +6,7 @@ li {
     /*头部*/
     width: 100%;
     height: 80px;
+    /*太极图*/
 
     #l_h_d {
         /*图标栏*/
@@ -16,13 +17,82 @@ li {
         float: left;
         align-content: center;
 
-        #lh_du {
-            /*图表框*/
+        #lh_td {
+            /*太极背框*/
+            --circle: 10px;
+            width: calc(8 * var(--circle));
+            height: calc(8 * var(--circle));
+            position: relative;
+            animation: move 1s infinite linear;
             margin-left: 60px;
-            width: 79px;
-            height: 79px;
-            border: 1px solid #c0c0c0;
-            border-radius: 40px;
+
+            #lh_td_d {
+                /*太极背板*/
+                width: calc(8 * var(--circle));
+                height: calc(8 * var(--circle));
+                border-radius: 50%;
+                background-color: #000;
+            }
+
+            #lh_td_b {
+                /*太极大白*/
+                width: calc(4 * var(--circle));
+                height: calc(8 * var(--circle));
+                background-color: white;
+                border-top-right-radius: calc(5 * var(--circle));
+                border-bottom-right-radius: calc(5 * var(--circle));
+                position: absolute;
+                top: 0;
+                left: calc(4 * var(--circle));
+            }
+
+            #lh_td_zh {
+                /*太极中黑*/
+                width: calc(4 * var(--circle));
+                height: calc(4 * var(--circle));
+                background-color: black;
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                left: calc(2 * var(--circle));
+            }
+
+
+            #lh_td_zb {
+                /*太极中白*/
+                width: calc(4 * var(--circle));
+                height: calc(4 * var(--circle));
+                background-color: white;
+                border-radius: 50%;
+                position: absolute;
+                top: calc(4 * var(--circle));
+                left: calc(2 * var(--circle));
+
+            }
+
+
+            #lh_td_xb {
+                /*太极小白*/
+                width: calc(2 * var(--circle));
+                height: calc(2 * var(--circle));
+                background-color: white;
+                border-radius: 50%;
+                position: absolute;
+                top: var(--circle);
+                left: calc(3 * var(--circle));
+            }
+
+
+            #lh_td_xh {
+                /*太极小黑*/
+                width: calc(2 * var(--circle));
+                height: calc(2 * var(--circle));
+                background-color: black;
+                border-radius: 50%;
+                position: absolute;
+                top: calc(5 * var(--circle));
+                left: calc(3 * var(--circle));
+            }
         }
     }
 
@@ -127,6 +197,11 @@ li {
                 color: white;
                 background-color: #282828;
                 border-bottom: black solid 1px;
+
+                .rh_ld_ul > a {
+                    color: #ddd;
+                    text-decoration: none;
+                }
             }
 
             .rh_ld_ul:hover {
@@ -150,6 +225,7 @@ li {
             height: 30px;
             background-color: #c3c2c254;
 
+
             #r_b_d > span {
                 display: inline-block;
             }
@@ -160,8 +236,24 @@ li {
             width: 100%;
             height: calc(100% - 30px);
             background-color: #a99f9f;
+
+            .rc_di {
+                width: 100%;
+                height: 100%;
+            }
         }
     }
 }
+
+
+@keyframes move {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 
