@@ -91,27 +91,28 @@
     }
 
     #taiji {
-        width: 80px;
-        height: 80px;
-        animation: rotate 3s linear infinite;
-        animation-play-state: running;
+        margin: 50px auto;
+        width: 600px;
+        height: 600px;
+        {#animation: rotate 3s linear infinite;#}
+        {#animation-play-state: paused;#}
     }
 
     .taiji {
-        width: 50px;
-        height: 50px;
+        width: 300px;
+        height: 300px;
         border-radius: 50%;
         position: relative;
-        margin: 5px auto;
-        top: 15px;
+        margin: 200px auto;
+        top: 150px;
         background-image: linear-gradient(to right, black 50%, white 50%);
     }
 
     .taiji::before, .taiji::after {
         content: '';
         position: absolute;
-        width: 8px;
-        height: 8px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
         left: 50%;
         transform: translateX(-50%);
@@ -119,16 +120,15 @@
 
     .taiji::before {
         background-color: white;
-        border: 9px solid black;
+        border: 30px solid black;
         top: 0;
     }
 
     .taiji::after {
         background-color: black;
-        border: 9px solid white;
+        border: 30px solid white;
         bottom: 0;
     }
-
 
     .line {
         width: inherit;
@@ -139,26 +139,26 @@
     }
 
     .line1 {
-        height: 2px;
-        width: 10px;
+        height: 10px;
+        width: 80px;
         background-color: #000000;
-        margin: 2px auto;
+        margin: 10px auto;
     }
 
     .line2 {
         display: flex;
-        width: 10px;
-        margin: 2px auto;
+        width: 80px;
+        margin: 10px auto;
     }
 
     .line3, .line4 {
-        height: 2px;
-        width: 10px;
+        height: 10px;
+        width: 35px;
         background-color: #000000;
     }
 
     .line4 {
-        margin-left: 2px;
+        margin-left: 10px;
     }
 
     @keyframes rotate {
@@ -171,8 +171,7 @@
     }
 
     #taiji:hover {
-        animation-play-state: paused
+        animation-play-state: running;
     }
 </style>
-
 </html>

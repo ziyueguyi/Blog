@@ -2,6 +2,15 @@ li {
     list-style-type: none;
 }
 
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 #l_d {
     /*头部*/
     width: 100%;
@@ -16,92 +25,85 @@ li {
         background-color: #282828;
         float: left;
         align-content: center;
-        @keyframes move {
-            0% {
-                transform: rotate(0deg);
+
+        #taiji {
+            width: 80px;
+            height: 80px;
+            margin-top: -6px;
+            margin-left: 70px;
+            animation: rotate 3s linear infinite;
+            animation-play-state: running;
+
+            .taiji {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                position: relative;
+                margin: 5px auto;
+                top: 15px;
+                background-image: linear-gradient(to right, black 50%, white 50%);
             }
-            100% {
-                transform: rotate(360deg);
+
+            .taiji::before, .taiji::after {
+                content: '';
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .taiji::before {
+                background-color: white;
+                border: 8px solid black;
+                top: 0;
+            }
+
+            .taiji::after {
+                background-color: black;
+                border: 8px solid white;
+                bottom: 0;
+            }
+
+
+            .line {
+                width: inherit;
+                height: inherit;
+                transform-origin: 50% 50%;
+                transition: all 0s;
+                position: absolute;
+            }
+
+            .line1 {
+                height: 2px;
+                width: 10px;
+                background-color: #000000;
+                margin: 2px auto;
+            }
+
+            .line2 {
+                display: flex;
+                width: 10px;
+                margin: 2px auto;
+            }
+
+            .line3, .line4 {
+                height: 2px;
+                width: 10px;
+                background-color: #000000;
+            }
+
+            .line4 {
+                margin-left: 2px;
+            }
+
+
+            #taiji:hover {
+                animation-play-state: paused
             }
         }
 
-        #lh_td {
-            /*太极背框*/
-            --circle: 10px;
-            width: calc(8 * var(--circle));
-            height: calc(8 * var(--circle));
-            position: relative;
-            animation: move 1s infinite linear;
-            margin-left: 60px;
-
-            #lh_td_d {
-                /*太极背板*/
-                width: calc(8 * var(--circle));
-                height: calc(8 * var(--circle));
-                border-radius: 50%;
-                background-color: #000;
-            }
-
-            #lh_td_b {
-                /*太极大白*/
-                width: calc(4 * var(--circle));
-                height: calc(8 * var(--circle));
-                background-color: white;
-                border-top-right-radius: calc(5 * var(--circle));
-                border-bottom-right-radius: calc(5 * var(--circle));
-                position: absolute;
-                top: 0;
-                left: calc(4 * var(--circle));
-            }
-
-            #lh_td_zh {
-                /*太极中黑*/
-                width: calc(4 * var(--circle));
-                height: calc(4 * var(--circle));
-                background-color: black;
-                border-radius: 50%;
-                position: absolute;
-                top: 0;
-                left: calc(2 * var(--circle));
-            }
-
-
-            #lh_td_zb {
-                /*太极中白*/
-                width: calc(4 * var(--circle));
-                height: calc(4 * var(--circle));
-                background-color: white;
-                border-radius: 50%;
-                position: absolute;
-                top: calc(4 * var(--circle));
-                left: calc(2 * var(--circle));
-
-            }
-
-
-            #lh_td_xb {
-                /*太极小白*/
-                width: calc(2 * var(--circle));
-                height: calc(2 * var(--circle));
-                background-color: white;
-                border-radius: 50%;
-                position: absolute;
-                top: var(--circle);
-                left: calc(3 * var(--circle));
-            }
-
-
-            #lh_td_xh {
-                /*太极小黑*/
-                width: calc(2 * var(--circle));
-                height: calc(2 * var(--circle));
-                background-color: black;
-                border-radius: 50%;
-                position: absolute;
-                top: calc(5 * var(--circle));
-                left: calc(3 * var(--circle));
-            }
-        }
     }
 
 
