@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "Back",
     "Login",
-    "Main"
+    "Main",
+    "Employ"
 ]
 
 MIDDLEWARE = [

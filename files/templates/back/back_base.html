@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}基础模板{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/back/back_base.css' %}">
+    {% block head %} {% endblock %}
+</head>
+<body>
+{% block content %}{% endblock %}
+</body>
+{% block foot %}{% endblock %}
+</html>

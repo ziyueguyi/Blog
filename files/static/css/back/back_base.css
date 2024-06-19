@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    overflow-y: scroll;
+    /*height: 100%;*/
+    /*background-color: #00a1cb;*/
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
